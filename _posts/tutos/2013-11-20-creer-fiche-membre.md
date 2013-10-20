@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tuto
 categories: [tutos]
 titre: Créer votre fiche personnelle
 description: Apprenez à créer votre fiche personnelle.
