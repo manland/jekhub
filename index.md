@@ -15,11 +15,11 @@ Un site **gratuit** pour tous, voici le réel but de se projet.
 
 ##Idée Générale
 
-Après avoir créé 4 sites `semi-static` avec Jekyll (dont celui-ci), je me rend compte qu'il faut toujours faire les mêmes tâches.
+Après avoir créé 4 sites `semi-statiques` avec Jekyll (dont celui-ci), je me rend compte qu'il faut toujours faire les mêmes tâches.
 
 Que cela soit pour un [portfolio](http://romain.maneschi.fr), un site [vitrine pour un projet](http://blog.skimbo.fr) ou encore un [showcase](http://itkweb.github.io/site-h-day) nous devons toujours réaliser les même tâches.
 
-Cet application web a donc pour but de : bootstraper, éditer et déployer très rapidement ce type de site.
+Cette application web a donc pour but de : bootstraper, éditer et déployer très rapidement ce type de site.
 
 ##Client-side
 
@@ -33,7 +33,7 @@ Cela nous évite également de devoir configurer un serveur `gratuit`, qui de to
 
 Open-source, échanges d'idées et de techniques, apprendre, découvrir sont les maîtres mots de ce projet. Rien ne se fera sans <s>vous</s> nous.
 
-Vous souhaitez participer ? Rien de plus simple [créez votre fiche]({{site.baseurl}}/tutos/2013/11/20/creer-fiche-membre.html) et pull-requestez vos idées.
+Vous souhaitez participer ? Rien de plus simple [créez votre fiche]({{site.baseurl}}/tutos/2013/11/20/creer-fiche-membre.html) et [pull-requestez vos idées]({{site.baseurl}}/tutos/2013/11/20/creer-fiche-idee.html).
 
 ##Version 1
 

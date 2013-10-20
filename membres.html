@@ -3,10 +3,10 @@ layout: default
 title: Membres
 ---
 
-<pre>Vous voulez participer au projet ? Créez votre <a href="{{site.baseurl}}/tutos/2013/11/20/creer-fiche-membre.html">fiche</a></pre>
+<pre>Vous voulez participer au projet ? Créez votre <a href="{{site.baseurl}}/tutos/2013/11/20/creer-fiche-membre.html">fiche</a>.</pre>
 
 {% for membre in site.categories.membres %}
-<h2>{{membre.pseudo}}</h2>
+<h2 id="{{membre.pseudo}}">{{membre.pseudo}}</h2>
 <img src="{{membre.photo}}" alt="avatar" />
 <a href="{{membre.github}}" target="_blank"><img src="{{site.baseurl}}/images/github.png" /></a>
 <a href="{{membre.facebook}}" target="_blank"><img src="{{site.baseurl}}/images/facebook.png" /></a>
