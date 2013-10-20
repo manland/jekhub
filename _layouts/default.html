@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <meta name="author" content="manland">
+    <meta content="initial-scale=1.0" name="viewport">
+    <link rel="icon" type="image/png" href="{{site.baseurl}}/images/icon.png">
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/stylesheets/github.css"> 
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/stylesheets/stylesheet.css">
+    <script src="{{site.baseurl}}/javascripts/main.js"></script> 
+  </head>
+  <body>
+    <div id="container">
+    <header id="header" class="header text-center">
+      <nav class="nav">
+        <ul id="navigation">
+          <li><a href="{{site.baseurl}}/index.html" {% if page.url contains "index.html" %}class="active"{% endif %}>Jekhub</a></li>
+          <li><a href="{{site.baseurl}}/etapes.html" {% if page.url contains "etapes.html" %}class="active"{% endif %}>Etapes</a></li>
+          <li><a href="{{site.baseurl}}/idees.html" {% if page.url contains "idees.html" %}class="active"{% endif %}>Idées</a></li>
+          <li><a href="{{site.baseurl}}/taches.html" {% if page.url contains "taches.html" %}class="active"{% endif %}>Tâches</a></li>
+          <li><a href="{{site.baseurl}}/membres.html" {% if page.url contains "membres.html" %}class="active"{% endif %}>Membres</a></li>
+        </ul>
+      </nav>
+    </header>
+<section class="main-section max-width">
+    {{ content }}
+</section>
+    <footer class="footer">Copyright 2013 - Made by <a href="http://romain.maneschi.fr">Manland</a>
+    </footer>
+  </div>
+  </body>
+</html>

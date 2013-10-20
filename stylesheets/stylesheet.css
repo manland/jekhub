@@ -1,0 +1,117 @@
+/*------------------------------------*\
+    COLORS
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    GLOBAL
+\*------------------------------------*/
+
+.text-center{text-align:center;}
+
+html{
+    height: 100%;
+}
+
+body{
+  height:100%;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#container{
+  position:relative;
+  height:auto;
+  min-height: 100%;
+}
+
+.max-width{
+  width:90%;
+  max-width:950px;
+  margin:0 auto;
+  position:relative;
+}
+
+
+
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
+
+
+.header{
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+}
+
+
+/*------------------------------------*\
+    SECTION
+\*------------------------------------*/
+
+
+.main-section{
+  padding:10px 0;
+}
+
+
+/*------------------------------------*\
+    FOOTER
+\*------------------------------------*/
+
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width:100%;
+    z-index:50;
+    font-size: 0.6em;
+    padding: 15px 0 0 0;
+    text-align: center;
+    opacity: 0.5;
+    transition: opacity 200ms;
+}
+  .footer:hover, .footer:focus{
+    opacity:1;
+  }
+
+
+/*------------------------------------*\
+    NAVIGATION
+\*------------------------------------*/
+
+
+
+.nav{
+  padding: 25px 0;
+}
+  #navigation li{
+    display:inline-block;
+    margin:0 30px;
+    font-size: 0.9em;
+  }
+    #navigation li a{
+      text-decoration:none;
+      display:block;
+      padding:10px 0;
+      color:#aaa;
+      transition:color 200ms;
+    }
+    #navigation li a.active{
+      color:#fff;
+      border-bottom: 2px solid #fff;
+    }
+    #navigation li a:hover,#navigation li a:focus{
+      color:#fff;
+    }
+
+nav select{
+  display:none;
+  padding:6px 16px;
+  margin:5px;
+  font-size:1.4em;
+}
+
+

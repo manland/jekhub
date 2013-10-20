@@ -1,0 +1,4 @@
+pygments: true
+name: "Jekhub"
+description: "Github pages editor"
+baseurl: /jekhub
