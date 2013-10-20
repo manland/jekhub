@@ -3,7 +3,7 @@ layout: default
 title: Etapes de création
 ---
 
-<pre>Cette page, représente les étapes pour créer un site avec Jekyll sur les Github-pages. Jekyll veut simplifier au maximum ces étapes.</pre>
+<pre>Cette page, représente les étapes pour créer un site avec Jekyll sur les Github-pages. Jekhub veut simplifier au maximum ces étapes.</pre>
 
 ##Pré-requis
 
