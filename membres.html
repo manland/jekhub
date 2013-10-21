@@ -8,12 +8,28 @@ title: Membres
 {% for membre in site.categories.membres %}
 <h2 id="{{membre.pseudo}}">{{membre.pseudo}}</h2>
 <img src="{{membre.photo}}" alt="avatar" />
-<a href="{{membre.github}}" target="_blank"><img src="{{site.baseurl}}/images/github.png" /></a>
-<a href="{{membre.facebook}}" target="_blank"><img src="{{site.baseurl}}/images/facebook.png" /></a>
-<a href="{{membre.twitter}}" target="_blank"><img src="{{site.baseurl}}/images/twitter.png" /></a>
-<a href="{{membre.viadeo}}" target="_blank"><img src="{{site.baseurl}}/images/viadeo.png" /></a>
-<a href="{{membre.linkedin}}" target="_blank"><img src="{{site.baseurl}}/images/linkedin.png" /></a>
-<a href="{{membre.googleplus}}" target="_blank"><img src="{{site.baseurl}}/images/googleplus.png" /></a>
-<a href="{{membre.blog}}" target="_blank">{{membre.blog}}</a>
-<pre>{{membre.bio}}</pre>
+<div class="bioAndSocial">
+	<pre>{{membre.bio}}</pre>
+	{% if membre.github %}
+	<a href="{{membre.github}}" target="_blank"><img src="{{site.baseurl}}/images/github.png" /></a>
+	{% endif %}
+	{% if membre.facebook %}
+	<a href="{{membre.facebook}}" target="_blank"><img src="{{site.baseurl}}/images/facebook.png" /></a>
+	{% endif %}
+	{% if membre.twitter %}
+	<a href="{{membre.twitter}}" target="_blank"><img src="{{site.baseurl}}/images/twitter.png" /></a>
+	{% endif %}
+	{% if membre.viadeo %}
+	<a href="{{membre.viadeo}}" target="_blank"><img src="{{site.baseurl}}/images/viadeo.png" /></a>
+	{% endif %}
+	{% if membre.linkedin %}
+	<a href="{{membre.linkedin}}" target="_blank"><img src="{{site.baseurl}}/images/linkedin.png" /></a>
+	{% endif %}
+	{% if membre.googleplus %}
+	<a href="{{membre.googleplus}}" target="_blank"><img src="{{site.baseurl}}/images/googleplus.png" /></a>
+	{% endif %}
+	{% if membre.blog %}
+	<a href="{{membre.blog}}" target="_blank">{{membre.blog}}</a>
+	{% endif %}
+</div>
 {% endfor %}
