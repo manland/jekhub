@@ -1,8 +1,8 @@
 ---
 layout: tuto
 categories: [tutos]
-titre: Créer une fiche idée
-description: Apprenez à créer une fiche pour une idée.
+titre: Créer une fiche pour un problème
+description: Apprenez à créer une fiche pour un problème.
 ---
 ##Pré-requis
 
@@ -11,9 +11,9 @@ description: Apprenez à créer une fiche pour une idée.
 
 ##Marche à suivre
 
-* Rendez vous sur [la page github](https://github.com/manland/jekhub/tree/gh-pages/_posts/idees)
+* Rendez vous sur [la page github](https://github.com/manland/jekhub/tree/gh-pages/_posts/problemes)
 * Créer un nouveau fichier en cliquant sur le plus au dessus des fichiers
-* Remplir le champ "Name your file..." en respectant la nomanclature : aaaa-mm-jj-idee.md (où aaaa-mm-jj correspond à la date du jour)
+* Remplir le champ "Name your file..." en respectant la nomanclature : aaaa-mm-jj-probleme.md (où aaaa-mm-jj correspond à la date du jour)
 * Remplir le contenu en respectant les champs :
 
 > Attention à ne pas toucher les variables layout et categories !
@@ -21,14 +21,14 @@ description: Apprenez à créer une fiche pour une idée.
 <pre>
 ---
 layout: default
-categories: [idees]
+categories: [problemes]
 pseudo_referer: Le pseudo de votre fiche
-titre: titre de l'idée
-description: "Courte description de votre idée"
+titre: titre du problème
+description: "Courte description de votre problème"
 ---
-Longue description de votre idée au format md et/ou html.
+Longue description de votre problème au format md et/ou html.
 </pre>
 
 * Remplir le "commit summary" avec votre prénom
 * Valider en cliquant sur "Commit New File"
-* Finalement, faites une pull-request de votre idée
+* Finalement, faites une pull-request de votre problème

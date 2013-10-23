@@ -19,20 +19,20 @@ description: Apprenez à créer votre fiche personnelle.
 > Attention à ne pas toucher les variables layout et categories !
 
 <pre>
-	---
-	layout: membres
-	categories: [membres]
-	pseudo: Pseudo
-	bio: "Courte bio sur vous"
-	photo: "url de votre photo"
-	github: "http://github.com/votrepseudo"
-	facebook: "url de votre facebook ou vide (sans double quote) pour ne pas être pris en compte"
-	twitter: "url de votre twitter ou vide (sans double quote) pour ne pas être pris en compte"
-	viadeo: "url de votre viadeo ou vide (sans double quote) pour ne pas être pris en compte"
-	linkedin: "url de votre linkedin ou vide (sans double quote) pour ne pas être pris en compte"
-	googleplus: "url de votre g+ ou vide (sans double quote) pour ne pas être pris en compte"
-	blog: "url de votre blog ou vide (sans double quote) pour ne pas être pris en compte"
-	---
+---
+layout: membres
+categories: [membres]
+pseudo: Pseudo
+bio: "Courte bio sur vous"
+photo: "url de votre photo"
+github: "http://github.com/votrepseudo"
+facebook: "url de votre facebook ou vide (sans double quote) pour ne pas être pris en compte"
+twitter: "url de votre twitter ou vide (sans double quote) pour ne pas être pris en compte"
+viadeo: "url de votre viadeo ou vide (sans double quote) pour ne pas être pris en compte"
+linkedin: "url de votre linkedin ou vide (sans double quote) pour ne pas être pris en compte"
+googleplus: "url de votre g+ ou vide (sans double quote) pour ne pas être pris en compte"
+blog: "url de votre blog ou vide (sans double quote) pour ne pas être pris en compte"
+---
 </pre>
 
 * Remplir le "commit summary" avec votre prénom
