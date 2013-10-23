@@ -76,6 +76,7 @@ A partir de là on a deux choix :
   * Par exemple, pour ce site j'ai créé l'entité `membre` qui comprend différentes variables (pseudo, url github, url twitter...)
   * Créer un template pour afficher ces entités (souvent un simple for sur ces entités)
   * Créer toutes les entités de ce type
+  * [Exemple complet]({{site.baseurl}}/createPage.html) de la création de l'entité `problème`
 
 ##Déployer
 

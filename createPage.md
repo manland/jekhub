@@ -8,6 +8,7 @@ title: Créer une page avec Jekyll
 > Exemple écrit en parallèle de la création de la page problèmes.
 
 * Créer un fichier problemes.md à la base du site
+  
   * Rajouter le header avec le layout et le title
 
 <pre>
@@ -38,11 +39,13 @@ description: "Si on fait trop d'appel à l'api github, on va avoir des rate limi
 Pour pallier à se problème on peut minimiser le nombre d'appel, localStorage power. 
 </pre>
 
-  * Ici nos variables seront :
-    * pseudo_referer : pour pouvoir faire un lien vers la fiche de la personne qui a écrit ce problème (afin de lui demander plus d'explications par exemple)
-    * titre : pour afficher quelque chose dans la page problèmes
-    * description : pour décrire rapidement le problème dans la page problèmes 
-    * Tout en bas se trouve le contenu qui peut contenir du formatage (md dans ce cas là) et qui sera affiché lorsqu'on ira dans sur la page du problème
+> pseudo_referer : pour pouvoir faire un lien vers la fiche de la personne qui a écrit ce problème (afin de lui demander plus d'explications par exemple)
+
+> titre : pour afficher quelque chose dans la page problèmes
+
+> description : pour décrire rapidement le problème dans la page problèmes 
+
+> Tout en bas se trouve le contenu qui peut contenir du formatage (md dans ce cas là) et qui sera affiché lorsqu'on ira dans sur la page du problème
 
 * Ajouter le contenu de la page problemes.md pour afficher nos problèmes
 
