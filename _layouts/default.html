@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/stylesheets/github.css"> 
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/stylesheets/stylesheet.css">
     <script src="{{site.baseurl}}/javascripts/main.js"></script> 
+    <script src="{{site.baseurl}}/javascripts/lib/base64.js"></script>
+    <script src="{{site.baseurl}}/javascripts/lib/underscore-min.js"></script>
+    <script src="{{site.baseurl}}/javascripts/github.js"></script> 
+    <script src="{{site.baseurl}}/javascripts/testGithub.js"></script> 
   </head>
   <body>
     <div id="container">
@@ -27,8 +31,7 @@
 <section class="main-section max-width">
     {{ content }}
 </section>
-    <footer class="footer">Copyright 2013 - Made by <a href="http://romain.maneschi.fr">Manland</a>
-    </footer>
+    <footer id="footer" class="footer">Copyright 2013 - Made by <a href="http://romain.maneschi.fr">Manland</a> - <a style="cursor:pointer" onClick="javascript:Jekhub.editPage( '{{page.path}}' )" >Editer la page !</a></footer>
   </div>
   </body>
 </html>
