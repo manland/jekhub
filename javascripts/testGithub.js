@@ -157,6 +157,11 @@ var Jekhub = (function() {
 		return github.getRepo(reponame, projectname);
 	}
 
+	function buildDateString() {
+		var d = new Date();
+		return "" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+	}
+
 	return {
 		editPage: function(path) {
 			checkTokenAndBuildRepo(function(repo) {
@@ -177,11 +182,36 @@ var Jekhub = (function() {
 					viadeo:"url",
 					linkedin:"url",
 					googleplus:"url",
-					blog:"url"
+					blog:"url",
+					content:""
 				}
-				var d = new Date();
-		    var stringDate = "" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
-				showForm(repo, function(object){return "_posts/membres/"+stringDate+"-"+object.pseudo+".md";}, form);
+				showForm(repo, function(object){return "_posts/membres/"+buildDateString()+"-"+object.pseudo+".md";}, form);
+			});
+		},
+		addIdea: function() {
+			checkTokenAndBuildRepo(function(repo) {
+				var form = {
+					layout:"default",
+					categories:"[idees]",
+					pseudo_referer:"pseudo",
+					titre:"titre",
+					description:"description",
+					content:"Longue description de l'idée en md ou html"
+				}
+				showForm(repo, function(object){return "_posts/idees/"+buildDateString()+"-"+object.titre+".md";}, form);
+			});
+		},
+		addProblem: function() {
+			checkTokenAndBuildRepo(function(repo) {
+				var form = {
+					layout:"default",
+					categories:"[problemes]",
+					pseudo_referer:"pseudo",
+					titre:"titre",
+					description:"description",
+					content:"Longue description du problème en md ou html"
+				}
+				showForm(repo, function(object){return "_posts/problemes/"+buildDateString()+"-"+object.titre+".md";}, form);
 			});
 		}
 	}
