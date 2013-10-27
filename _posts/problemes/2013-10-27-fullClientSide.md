@@ -1,9 +1,9 @@
 ---
-layout: default
-categories: [problemes]
-pseudo_referer: Manland
-titre: Full client-side
-description: "Jekhub peut-il être réalisé client-side seulement (sans serveur) ?"
+layout : default
+categories : [problemes]
+pseudo_referer : "Manland"
+titre : "Full client-side"
+description : "Jekhub peut-il être réalisé client-side seulement (sans serveur) ?"
 ---
 Un POC a été réalisé, sur ce site, pour voir la faisabilité du `full client-side`.
 
