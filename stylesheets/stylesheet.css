@@ -40,6 +40,10 @@ pre {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+img {
+  border: 1px solid #ccc;
+}
+
 /*------------------------------------*\
     HEADER
 \*------------------------------------*/
