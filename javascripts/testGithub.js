@@ -98,6 +98,7 @@ var Jekhub = (function() {
 			document.body.removeChild(prompt);
 			console.log(getPathFunction(object), toCommit);
 			repo.write('gh-pages', getPathFunction(object), toCommit, commitSummary, function(err) {
+				window.alert("Une erreur est survenue lors de l'écriture des infos, ouvrez votre console pour en savoir plus !");
 				console.log(err);
 			});
 		}
@@ -115,7 +116,9 @@ var Jekhub = (function() {
 			if(!err && data) {
 				showForm(repo, function(object){return path;}, splitData(data));
 			} else {
-				localStorage.removeItem("token");
+				window.alert("Une erreur est survenue lors de la récupération des infos, ouvrez votre console pour en savoir plus !");
+				console.log(err);
+				//localStorage.removeItem("token");
 				showPromptToken(path);
 			}
 		});
