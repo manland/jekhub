@@ -64,7 +64,7 @@ var Jekhub = (function() {
 		return res;
 	}
 
-	function showForm(repo, path, object) {
+	function showForm(repo, getPathFunction, object) {
 		var promptString = '';
 		for(var key in object) {
 			if(key !== "content") {
@@ -73,7 +73,7 @@ var Jekhub = (function() {
 				promptString += key + ' : <textarea rows="4" cols="50" id="input'+key+'">'+object[key]+'</textarea><br />';
 			}
 		}
-		promptString += 'Commit summary : <textarea rows="4" cols="50" id="inputCommit">Update of '+path+'</textarea><br />'
+		promptString += 'Commit summary : <textarea rows="4" cols="50" id="inputCommit">Update of '+getPathFunction(object)+'</textarea><br />'
 		promptString += '<input id="cancelForm" type="button" value="Cancel" />';
 		promptString += '<input id="validateForm" type="button" value="Ok" /><br /><br />';
 		promptString += '<input id="deleteToken" type="button" value="Delete token" />';
@@ -84,18 +84,20 @@ var Jekhub = (function() {
 			for(var key in object) {
 				if(key !== "content") {
 					var newValue = document.getElementById('input'+key).value;
+					object[key] = newValue;
 					newValue = key === "layout" ? newValue : addQuote(newValue);
 					toCommit += key + ' : ' + newValue + "\n";
 				}
 			}
 			toCommit += "---\n";
+			object.content = document.getElementById('inputcontent').value;
 			if(object.content !== ""){
 				toCommit += object.content;
 			}
 			var commitSummary = document.getElementById('inputCommit').value;
 			document.body.removeChild(prompt);
-			console.log(toCommit);
-			repo.write('gh-pages', path, toCommit, commitSummary, function(err) {
+			console.log(getPathFunction(object), toCommit);
+			repo.write('gh-pages', getPathFunction(object), toCommit, commitSummary, function(err) {
 				console.log(err);
 			});
 		}
@@ -108,14 +110,10 @@ var Jekhub = (function() {
 		}
 	}
 
-	function editPage(token, path) {
-		var github = new Github({
-		  token: token
-		});
-		var repo = github.getRepo(reponame, projectname);
+	function editPage(repo, path) {
 		repo.read("gh-pages", path, function(err, data) {
 			if(!err && data) {
-				showForm(repo, path, splitData(data));
+				showForm(repo, function(object){return path;}, splitData(data));
 			} else {
 				localStorage.removeItem("token");
 				showPromptToken(path);
@@ -137,52 +135,54 @@ var Jekhub = (function() {
 		}
 	}
 
+	function checkTokenAndBuildRepo(callback) {
+		if(localStorage) {
+			var token = localStorage['token'];
+			if(token) {
+				callback(buildRepo(token));
+			} else {
+				showPromptToken(function(token) {
+					callback(buildRepo(token));
+				});
+			}
+		} else {
+			window.alert("Your browser doesn't support localStorage !");
+		}
+	}
+
+	function buildRepo(token) {
+		var github = new Github({
+		  token: token
+		});
+		return github.getRepo(reponame, projectname);
+	}
+
 	return {
 		editPage: function(path) {
-			if(localStorage) {
-				var token = localStorage['token'];
-				if(token) {
-					editPage(token, path);
-				} else {
-					showPromptToken(function(token) {
-						editPage(token, path);
-					});
-				}
-			} else {
-				window.alert("Your browser doesn't support localStorage !");
-			}
+			checkTokenAndBuildRepo(function(repo) {
+				editPage(repo, path);
+			});
 		},
 		addMember: function() {
-			if(localStorage) {
-				var token = localStorage['token'];
-				if(token) {
-					var github = new Github({
-					  token: token
-					});
-					var repo = github.getRepo(reponame, projectname);
-					var form = {
-						layout:"membres",
-						categories:"[membres]",
-						pseudo:"pseudo",
-						bio:"description",
-						photo:"url",
-						github:"url",
-						facebook:"url",
-						twitter:"url",
-						viadeo:"url",
-						linkedin:"url",
-						googleplus:"url",
-						blog:"url"
-					}
-					showForm(repo, "_posts/membres/2013-10-26-test.md", form);
-				} else {
-					showPromptToken(function(token) {
-						showForm(repo, "_posts/membres/2013-10-26-test.md", form);
-					});
+			checkTokenAndBuildRepo(function(repo) {
+				var form = {
+					layout:"membres",
+					categories:"[membres]",
+					pseudo:"pseudo",
+					bio:"description",
+					photo:"url",
+					github:"url",
+					facebook:"url",
+					twitter:"url",
+					viadeo:"url",
+					linkedin:"url",
+					googleplus:"url",
+					blog:"url"
 				}
-			} else {
-				window.alert("Your browser doesn't support localStorage !");
-			}
+				var d = new Date();
+		    var stringDate = "" + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+				showForm(repo, function(object){return "_posts/membres/"+stringDate+"-"+object.pseudo+".md";}, form);
+			});
 		}
 	}
 })();
